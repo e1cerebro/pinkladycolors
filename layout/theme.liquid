@@ -31,7 +31,6 @@
   {%- endif -%}
 
   {% include 'social-meta-tags' %}
-  {% include 'style-tags', layout: 'theme' %}
   {% include 'css-variables' %}
 
   <script>
@@ -47,9 +46,9 @@
     };
   </script>
 
-  {% include 'script-tags', layout: 'theme' %}
-
   {{ content_for_header }}
+
+  {{ 'app.css' | asset_url | stylesheet_tag }}
 </head>
 
 <body id="{{ page_title | handle }}" class="template-{{ template.name | handle }}">
@@ -58,11 +57,14 @@
 
   {% section 'header' %}
 
+<p id="app">view mounted</p>
   <main role="main" id="MainContent">
     {{ content_for_layout }}
   </main>
 
   {% section 'footer' %}
+
+  {{ 'app.js' | asset_url | script_tag }}
 
 </body>
 </html>

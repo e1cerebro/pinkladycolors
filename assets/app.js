@@ -1,13 +1,20 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/js/app.js":
 /*!***********************!*\
   !*** ./src/js/app.js ***!
   \***********************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-alert("hello");
+__webpack_require__.r(__webpack_exports__);
+ // var app = new Vue({
+//     el: '#app',
+//     data: {
+//       message: 'Hello Vue!'
+//     }
+//   })
 
 /***/ }),
 
@@ -17,7 +24,6 @@ alert("hello");
   \***************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
