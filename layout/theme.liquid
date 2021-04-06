@@ -49,6 +49,8 @@
   {{ content_for_header }}
 
   {{ 'app.css' | asset_url | stylesheet_tag }}
+
+
 </head>
 
 <body id="{{ page_title | handle }}" class="template-{{ template.name | handle }}">
@@ -57,7 +59,7 @@
 
   {% section 'header' %}
 
-<p id="app">view mounted</p>
+<span id="app"></span>
   <main role="main" id="MainContent">
     {{ content_for_layout }}
   </main>

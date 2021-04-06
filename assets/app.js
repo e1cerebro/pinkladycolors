@@ -3119,7 +3119,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // var app = new Vue({
+ // jQuery(document).ready(function(){
+//   jQuery(".owl-carousel").owlCarousel();
+// });
+// var app = new Vue({
 //     el: '#app',
 //     data: {
 //       message: 'Hello Vue!'

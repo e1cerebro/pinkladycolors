@@ -1,0 +1,109 @@
+<section class="image-slider">
+
+    <div id="image-slider" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-indicators">
+            {% for block in section.blocks %}
+                <button type="button" 
+                        data-bs-target="#carouselExampleIndicators" 
+                        data-bs-slide-to="{{forloop.index0}}" 
+                        class="{% if forloop.first == true %} active {% endif %}" aria-current="true" 
+                        aria-label="Slide {{forloop.index}}"></button>
+            {% endfor %}
+        </div>
+
+        <div class="carousel-inner">
+
+                {% for block in section.blocks %}
+                    
+                        <div class="carousel-item {% if forloop.first == true %} active {% endif %}">
+                                <img src="{{ block.settings.image_slide | img_url:master }}" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h2>{{block.settings.header_text}}</h2>
+                                    <h4>{{block.settings.sub-header}}</h4>
+                                    <p>{{ block.settings.long_text}}</p>
+                                </div>
+                        </div>
+                    
+                {% endfor %}
+
+        </div>
+        
+        <button class="carousel-control-prev" type="button" data-bs-target="#image-slider" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#image-slider" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+
+ 
+
+
+{% schema %}
+    {
+        "name": "Image Slider",
+        "settings": [
+            {
+                "type": "header",
+                "content": "Image Slider"
+            }            
+        ],
+
+        "blocks": [
+      {
+        "type": "slide",
+        "name": "Slide",
+        "settings": [
+          {
+            "id": "image_slide",
+            "type": "image_picker",
+            "label": "Image Slide",
+            "info" : "Ideal size for your image should be 1240 x 720"
+          },
+          {
+            "id": "header_text",
+            "type": "text",
+            "label": "Header Text"
+          },
+          {
+              "id": "sub-header",
+              "type": "text",
+              "label": "Sub Header" 
+          },
+          {
+            "id": "long_text",
+            "type": "richtext",
+            "label": "Long Text"
+          },
+          {
+              "id": "btn_text",
+              "type": "text",
+              "label": "Button Text"
+          },
+          {
+              "type": "color",
+              "id": "button_text_color",
+              "label": "Button Text Color",
+              "default": "#fff"
+          },
+          {
+               "type": "color",
+              "id": "button_bg_color",
+              "label": "Button Background Color",
+              "default": "#000"
+          }
+        ]
+      }
+    ],
+        "presets": [
+            {
+                "name": "Image Slider",
+                "category": "Image"
+            }
+        ]
+    }
+{% endschema %}
