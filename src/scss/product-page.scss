@@ -1,0 +1,17 @@
+.product-featured-image {
+
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+    background-position: center center;
+}
+
+
+.product-gallery-nav .product-single__thumbnail-image, .product-featured-image{
+    cursor: pointer;
+}
+
+section.product-page-header {
+    background-color: #ffeded;
+    margin-bottom: 45px;
+}
